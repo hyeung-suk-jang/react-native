@@ -148,7 +148,6 @@ class Join extends Component {
 				<View style={styles.formDesc}>
 					<TextInput placeholder="지역을 입력해주세요" style={styles.innerDesc}/>
 				</View>
-
 				<View style={styles.botBtnWrap}>
 					<TouchableOpacity
 						style={styles.botButton}
@@ -175,7 +174,7 @@ export default Join;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+	   flex: 1,
 		paddingTop: 20,
 		paddingLeft: 25,
 		paddingRight: 25,
