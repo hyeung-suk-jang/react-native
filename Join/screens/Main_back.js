@@ -25,21 +25,34 @@ class Main extends Component {
 		<View style={styles.botBtnWrap}>
 					<TouchableOpacity
 						style={styles.botButton}
-						onPress={() => {
-						navigation.navigate('Join');
-					  }}
 						>
 						<Text style={styles.subHeaderText}>회원가입</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={styles.botButton}
-						onPress={() => {
-							navigation.navigate('Login');
-						  }}
-						>
+						style={styles.botButton}>
 						<Text style={styles.subHeaderText}>로그인</Text>
 					</TouchableOpacity>
 				</View>
+        <TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('Join');
+          }}>
+           <Text style={styles.button}>회원가입하기</Text>
+        </TouchableOpacity>
+		<TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('Login');
+          }}>
+				<Text style={styles.button}>로그인하기</Text>
+		</TouchableOpacity>
+			  /*
+		  <TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('Elements');
+          }}>
+				<Text style={styles.button}>엘리먼트체험하기</Text>
+		</TouchableOpacity>	 
+		*/
       </View>
     );
   }
@@ -85,8 +98,7 @@ const styles = StyleSheet.create({
 	},
 	innerDesc: {
 		height:40,
-		lineHeight:40,
-		width:300
+		lineHeight:40
 	},
 	botBtnWrap: {
 		flexDirection: 'row',height:60,marginBottom:20
