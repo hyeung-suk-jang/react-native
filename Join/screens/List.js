@@ -10,6 +10,12 @@ class Main extends Component {
       <View style={styles.container}>
         <TouchableOpacity style={styles.buttonWrap}
           onPress={() => {
+            navigation.navigate('HelloWorld');
+          }}>
+           <Text style={styles.button}>Hello World</Text>
+        </TouchableOpacity>	
+        <TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
             navigation.navigate('Join');
           }}>
            <Text style={styles.button}>회원가입하기</Text>
@@ -32,12 +38,11 @@ class Main extends Component {
           }}>
 				<Text style={styles.button}>탭메뉴</Text>
 		</TouchableOpacity>
-		
 		  <TouchableOpacity style={styles.buttonWrap}
           onPress={() => {
-            navigation.navigate('Elements');
+            navigation.navigate('Test');
           }}>
-				<Text style={styles.button}>엘리먼트체험하기</Text>
+				<Text style={styles.button}>테스트페이지</Text>
 		</TouchableOpacity>	 
       </View>
     );

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Icon } from 'react-native-elements'
+//import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-ionicons'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer } from 'react-navigation';
 
 //npm install react-navigation-tabs --save
 //npm install react-native-reanimated --save
+//npm install react-native-ionicons
+
 class HomeScreen extends React.Component {
   render() {
     return (
@@ -21,27 +23,27 @@ class SettingsScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>두번째 페이지!</Text>
+        <Text>세팅 페이지!</Text>
       </View>
     );
   }
 }
 
 
-class Screen3 extends React.Component {
+class Chatting extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>세번째 페이지!</Text>
+        <Text>채팅 페이지!</Text>
       </View>
     );
   }
 }
-class Screen4 extends React.Component {
+class Stats extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>네번째 페이지!</Text>
+        <Text>통계 페이지!</Text>
       </View>
     );
   }
@@ -50,9 +52,10 @@ class Screen4 extends React.Component {
 class IconWithBadge extends React.Component {
   render() {
     const { name, badgeCount, color, size } = this.props;
+
     return (
       <View style={{ width: 24, height: 24, margin: 5 }}>
-        <Ionicons name={name} size={size} color={color} />
+        <Icon name={name} size={size} color={color} />
 
         {badgeCount > 0 && (
           <View
@@ -86,16 +89,18 @@ const HomeIconWithBadge = props => {
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
   const { routeName } = navigation.state;
-  let IconComponent = Ionicons;
+  let IconComponent = Icon;
   let iconName;
   if (routeName === 'Home') {
-    iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+    iconName = "home";
     // We want to add badges to home tab icon
     IconComponent = HomeIconWithBadge;
   } else if (routeName === 'Settings') {
-    iconName = `ios-options${focused ? '' : '-outline'}`;
+    iconName = `md-settings`;
+  }else if(routeName=='Chatting'){
+	iconName = `md-contacts`;
   }else{
-	iconName = `ios-options${focused ? '' : '-outline'}`;
+	iconName = `md-stats`;
   }
 
   // You can return any component that you like here!
@@ -106,9 +111,9 @@ export default createAppContainer(
   createBottomTabNavigator(
     {
       Home: { screen: HomeScreen },
-      Settings: { screen: SettingsScreen },
-	  Screen3 : {screen:Screen3},
-	  Screen4 : {screen:Screen4},
+	  Chatting : {screen:Chatting},
+	  Stats : {screen:Stats},
+	  Settings: { screen: SettingsScreen },
     },
     {
       defaultNavigationOptions: ({ navigation }) => ({
