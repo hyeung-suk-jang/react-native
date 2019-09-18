@@ -4,6 +4,7 @@ import { createAppContainer} from 'react-navigation';
 import {createStackNavigator,} from 'react-navigation-stack';
 
 import mainpage from './screens/Main';
+import mainpage2 from './screens/Main2';
 import joinpage from './screens/Join';
 import loginpage from './screens/Login';
 import elements from './screens/Elements';
@@ -20,7 +21,7 @@ npm rebuild
 
 const App = createStackNavigator(
   {
-    Main: {screen: mainpage},
+    Main: {screen: mainpage2},
     Join: {screen: joinpage},
 	Login:{screen: loginpage},
 	Elements:{screen:elements},
