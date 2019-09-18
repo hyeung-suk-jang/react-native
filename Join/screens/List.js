@@ -8,38 +8,37 @@ class Main extends Component {
 
     return (
       <View style={styles.container}>
+        <TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('Join');
+          }}>
+           <Text style={styles.button}>회원가입하기</Text>
+        </TouchableOpacity>
 		<TouchableOpacity style={styles.buttonWrap}
           onPress={() => {
-			console.log('join')
+            navigation.navigate('Login');
           }}>
-           <Text style={styles.button}>로그인하기</Text>
-        </TouchableOpacity>
-		<Text style={styles.formTit}>이메일(로그인 ID)</Text>
-		<View style={styles.formDesc}>
-					<TextInput placeholder="이메일을 입력해주세요" style={styles.innerDesc} />
-				</View>
-		<Text style={styles.formTit}>비밀번호(영문+숫자,8자이상)</Text>
-		<View style={styles.formDesc}>
-					<TextInput placeholder="비밀번호를 입력해주세요" secureTextEntry={true} style={styles.innerDesc} />
-				</View>
-		<View style={styles.botBtnWrap}>
-					<TouchableOpacity
-						style={styles.botButton}
-						onPress={() => {
-						navigation.navigate('Join');
-					  }}
-						>
-						<Text style={styles.subHeaderText}>회원가입</Text>
-					</TouchableOpacity>
-					<TouchableOpacity
-						style={styles.botButton}
-						onPress={() => {
-							navigation.navigate('Login');
-						  }}
-						>
-						<Text style={styles.subHeaderText}>로그인</Text>
-					</TouchableOpacity>
-				</View>
+				<Text style={styles.button}>로그인하기</Text>
+		</TouchableOpacity>
+		<TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('LoginServer');
+          }}>
+				<Text style={styles.button}>로그인 서버연동</Text>
+		</TouchableOpacity>
+		<TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('Tabmenu');
+          }}>
+				<Text style={styles.button}>탭메뉴</Text>
+		</TouchableOpacity>
+		
+		  <TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('Elements');
+          }}>
+				<Text style={styles.button}>엘리먼트체험하기</Text>
+		</TouchableOpacity>	 
       </View>
     );
   }
@@ -85,8 +84,7 @@ const styles = StyleSheet.create({
 	},
 	innerDesc: {
 		height:40,
-		lineHeight:40,
-		width:300
+		lineHeight:40
 	},
 	botBtnWrap: {
 		flexDirection: 'row',height:60,marginBottom:20

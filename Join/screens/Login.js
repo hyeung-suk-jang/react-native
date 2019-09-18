@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity,TextInput} from 'react-native';
 
 class Main extends Component {
   render() {
@@ -8,7 +8,38 @@ class Main extends Component {
 
     return (
       <View style={styles.container}>
-        <Text>로그인 화면!</Text>
+		<TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+			console.log('join')
+          }}>
+           <Text style={styles.button}>로그인하기</Text>
+        </TouchableOpacity>
+		<Text style={styles.formTit}>이메일(로그인 ID)</Text>
+		<View style={styles.formDesc}>
+					<TextInput placeholder="이메일을 입력해주세요" style={styles.innerDesc} />
+				</View>
+		<Text style={styles.formTit}>비밀번호(영문+숫자,8자이상)</Text>
+		<View style={styles.formDesc}>
+					<TextInput placeholder="비밀번호를 입력해주세요" secureTextEntry={true} style={styles.innerDesc} />
+				</View>
+		<View style={styles.botBtnWrap}>
+					<TouchableOpacity
+						style={styles.botButton}
+						onPress={() => {
+						navigation.navigate('Join');
+					  }}
+						>
+						<Text style={styles.subHeaderText}>회원가입</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.botButton}
+						onPress={() => {
+							navigation.navigate('Login');
+						  }}
+						>
+						<Text style={styles.subHeaderText}>로그인</Text>
+					</TouchableOpacity>
+				</View>
       </View>
     );
   }
@@ -23,21 +54,55 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonWrap: {
-    backgroundColor:'#A50000',
-    width:261,
+    width:320,
     height:78,
-    borderRadius:15,
+	color:'black',
+	borderColor:'black',
+	borderWidth:1,
     justifyContent: 'center',
     alignItems: 'center',
+	marginTop:10,
     marginBottom: 25
   },
   button: {
     fontSize:35,
-    color:'#fff'
+    color:'black'
   },
   link: {
     textAlign:'center',
     fontSize:22,
     textDecorationLine: 'underline',
-  }
+  },
+	formTit: {
+		fontSize:22,
+		lineHeight:25
+	},
+	formDesc: {
+		borderBottomColor:'#707070',
+		borderBottomWidth:1,
+		height:40,
+		flexDirection: 'row',
+	},
+	innerDesc: {
+		height:40,
+		lineHeight:40,
+		width:300
+	},
+	botBtnWrap: {
+		flexDirection: 'row',height:60,marginBottom:20
+	},
+	botButton: {
+		flex:1,
+		margin:10,
+		backgroundColor:'#A50000',
+		// width:261,
+		height:60,
+		borderRadius:15,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	subHeaderText: {
+		fontSize:26,
+    color:'#fff'
+	},
 });

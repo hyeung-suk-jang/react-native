@@ -3,11 +3,13 @@ import React, {Component} from 'react';
 import { createAppContainer} from 'react-navigation';
 import {createStackNavigator,} from 'react-navigation-stack';
 
-import mainpage from './screens/Main';
-import mainpage2 from './screens/Main2';
+import loginserverpage from './screens/LoginServer';
 import joinpage from './screens/Join';
 import loginpage from './screens/Login';
 import elements from './screens/Elements';
+import listpage from './screens/List';
+import tabpage from './screens/Tabmenu';
+
 
 /*
 react-native-navigation ¼³Ä¡ : https://facebook.github.io/react-native/docs/navigation
@@ -21,13 +23,15 @@ npm rebuild
 
 const App = createStackNavigator(
   {
-    Main: {screen: mainpage2},
+	LoginServer :{screen: loginserverpage},
     Join: {screen: joinpage},
 	Login:{screen: loginpage},
 	Elements:{screen:elements},
+	List:{screen:listpage},
+	Tabmenu:{screen:tabpage}
   },
 
-  {initialRouteName: 'Main', headerMode: 'none'},
+  {initialRouteName: 'List', headerMode: 'none'},
 );
 
 export default createAppContainer(App);
