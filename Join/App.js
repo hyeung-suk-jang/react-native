@@ -10,7 +10,9 @@ import loginpage from './screens/Login';
 import elements from './screens/Elements';
 import listpage from './screens/List';
 import tabpage from './screens/Tabmenu';
+import flatlistpage from './screens/Flatlist';
 import testpage from './screens/Test';
+import imageslider from './screens/ImageSlider';
 
 /*
 react-native-navigation ¼³Ä¡ : https://facebook.github.io/react-native/docs/navigation
@@ -31,6 +33,8 @@ const App = createStackNavigator(
 	Elements:{screen:elements},
 	List:{screen:listpage},
 	Tabmenu:{screen:tabpage},
+	FlatList:{screen:flatlistpage},
+	ImageSlider:{screen:imageslider},
 	Test:{screen:testpage},
   },
 

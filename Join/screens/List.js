@@ -38,6 +38,20 @@ class Main extends Component {
           }}>
 				<Text style={styles.button}>탭메뉴</Text>
 		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('ImageSlider');
+          }}>
+				<Text style={styles.button}>ImageSlider</Text>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonWrap}
+          onPress={() => {
+            navigation.navigate('FlatList');
+          }}>
+				<Text style={styles.button}>FlatList</Text>
+		</TouchableOpacity>
 		  <TouchableOpacity style={styles.buttonWrap}
           onPress={() => {
             navigation.navigate('Test');
@@ -59,7 +73,7 @@ const styles = StyleSheet.create({
   },
   buttonWrap: {
     width:320,
-    height:78,
+    height:58,
 	color:'black',
 	borderColor:'black',
 	borderWidth:1,
