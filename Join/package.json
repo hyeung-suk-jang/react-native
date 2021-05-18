@@ -11,7 +11,7 @@
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-elements": "^1.2.0",
-    "react-native-fast-image": "^7.0.2",
+    "react-native-fast-image": "^8.3.0",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-image-slider-box": "^1.0.5",
     "react-native-ionicons": "^4.6.1",
